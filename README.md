@@ -2,4 +2,5 @@
 - select a segment, and run the extension. 
 - By default it is on `cmd + /` shortcut, if you wish to remove them press `ctrl + /`. 
 - It will only remove the guideliens that had been added by this extension.
-- works only with straight lines and multiple selection
+- works only with straight lines and multiple selection <br>
+![Extension in use](guidelines.png "Result of this extension")
