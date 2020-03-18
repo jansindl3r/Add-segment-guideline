@@ -21,8 +21,8 @@ def addGuideline(glyph: RGlyph) -> None:
         for i, segment in enumerate(contour):
             if segment.selected:
                 if segment.type == "line":
-                    ptTo = segment.points[0]
-                    ptFrom = contour[i - 1].points[0]
+                    ptTo = segment.points[-1]
+                    ptFrom = contour[i - 1].points[-1]
                     angle: float = angleBetweenTwoPoints(ptFrom, ptTo)
                     position: Tuple[int, int] = middleBetweenTwoPoints(ptFrom, ptTo)
                     glyph.appendGuideline(position, angle, color=(.999, .001, 0, .499))
