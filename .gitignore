@@ -1,4 +1,5 @@
 .*
 !.gitignore
 *.roboFontExt
+preferences.plist
 !addSegmentGuideline.roboFontExt
