@@ -1,6 +1,6 @@
 from math import atan2, degrees
 from lib.fontObjects.fontPartsWrappers import RGuideline, RGlyph
-from typing import Tuple
+from typing import Tuple, Union
 
 
 def angleBetweenTwoPoints(pt1: RGlyph, pt2: RGlyph) -> float:
@@ -11,9 +11,9 @@ def angleBetweenTwoPoints(pt1: RGlyph, pt2: RGlyph) -> float:
 
 
 def middleBetweenTwoPoints(pt1: RGlyph, pt2: RGlyph) -> Tuple[int, int]:
-    sums: tuple = tuple(map(sum, zip(pt1.position, pt2.position)))
-    x, y = tuple(i // 2 for i in sums)
-    return (x, y)
+    sums: Tuple[int, int] = tuple(map(sum, zip(pt1.position, pt2.position)))
+    return tuple(map(lambda x:x//2, sums))
+
 
 
 def addGuideline(glyph: RGlyph) -> None:
@@ -25,7 +25,9 @@ def addGuideline(glyph: RGlyph) -> None:
                     ptFrom = contour[i - 1].points[-1]
                     angle: float = angleBetweenTwoPoints(ptFrom, ptTo)
                     position: Tuple[int, int] = middleBetweenTwoPoints(ptFrom, ptTo)
-                    glyph.appendGuideline(position, angle, color=(.999, .001, 0, .499))
+                    glyph.appendGuideline(
+                        position, angle, color=(0.999, 0.001, 0, 0.499)
+                    )
     glyph.update()
 
 
