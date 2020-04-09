@@ -7,13 +7,12 @@ def angleBetweenTwoPoints(pt1: RGlyph, pt2: RGlyph) -> float:
     x: int
     y: int
     x, y = tuple(i - j for i, j in zip(pt1.position, pt2.position))
-    return degrees(atan2(y, x))
+    return degrees(atan2(y, x))%180
 
 
 def middleBetweenTwoPoints(pt1: RGlyph, pt2: RGlyph) -> Tuple[int, int]:
     sums: Tuple[int, int] = tuple(map(sum, zip(pt1.position, pt2.position)))
     return tuple(map(lambda x:x//2, sums))
-
 
 
 def addGuideline(glyph: RGlyph) -> None:
