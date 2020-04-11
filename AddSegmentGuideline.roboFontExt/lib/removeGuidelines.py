@@ -1,11 +1,12 @@
 from typing import Tuple
 from lib.fontObjects.fontPartsWrappers import RGlyph
+from addGuideline import getColor
 
 
 def removeGuidelines(glyph: RGlyph):
-    colorToRemove: Tuple[float, ...] = (0.999, 0.001, 0.0, 0.499)
+    colorsToRemove: Tuple[tuple, ...] = ((0.999, 0.001, 0.0, 0.499), getColor())
     for guideline in glyph.guidelines:
-        if guideline.color == colorToRemove:
+        if guideline.color in colorsToRemove:
             glyph.removeGuideline(guideline)
 
 
