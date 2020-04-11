@@ -7,7 +7,7 @@
 ## plans
 - add right click contextual menu for adding guideline - for mouse users
 - add possibility to mirror a guideline in contextual menu
-## verions
+## versions
 - 0.2 - added possibility of adding guideline on offcurve points or two independent points (combination of on curve and offcurve possible). Fixed bug, all angles are `x:x % 180`
 - 0.1 - basic functionality, adding guideline on straight lines only
 ![Extension in use](guidelines.png "Result of this extension")
